@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package proto;
+
+message Question {
+    string Question = 1;
+}
+
+message Answer {
+    string Answer = 1;
+}
+
+message Festival {
+    string Name = 1;
+}
+
+message Gift {
+    string Name = 1;
+}
+
+message Wish {
+    string name = 1;
+}
+
+message Blessing {
+    string name = 1;
+}
+
+service SpiritualService {
+    rpc AskGenie(Question) returns (Answer);  
+    rpc SendGifts(Festival) returns (stream Gift);
+    rpc LetsPray(stream Wish) returns (stream Blessing);
+}
+
